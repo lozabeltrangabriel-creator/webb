@@ -1,0 +1,186 @@
+/* VARIABLES DE COLOR (para reutilizar en todo el diseño) */
+:root {
+    --azul1: #215fe6;
+    --azul2: #1976d2;
+    --azul3: #42a5f5;
+}
+
+/* ESTILO GENERAL DEL BODY */
+body {
+    font-family: "Times New Roman", serif;
+    background-color: #f5f7fa; /* color de fondo suave */
+}
+
+/* ================= NAVBAR ================= */
+/* Barra de navegación principal */
+.navbar {
+    background: linear-gradient(90deg, #215fe6, #1976d2); /* degradado azul */
+    position: sticky; /* se queda fija arriba al hacer scroll */
+    top: 0;
+    z-index: 1000; /* se mantiene encima de otros elementos */
+    backdrop-filter: blur(10px); /* efecto de desenfoque */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2); /* sombra elegante */
+}
+
+/* Enlaces del navbar */
+.navbar .nav-link {
+    color: white !important;
+    font-weight: 600;
+    margin-left: 15px;
+    position: relative;
+    transition: 0.3s;
+}
+
+/* Línea animada debajo del enlace */
+.navbar .nav-link::after {
+    content: "";
+    position: absolute;
+    width: 0%; /* empieza invisible */
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background: var(--azul3);
+    transition: 0.3s;
+}
+
+/* Animación al pasar el mouse */
+.navbar .nav-link:hover::after {
+    width: 100%; /* se expande la línea */
+}
+
+/* Cambio de color al pasar el mouse */
+.navbar .nav-link:hover {
+    color: #bbdefb !important;
+}
+
+/* ================= HERO (VIDEO) ================= */
+/* Contenedor del video principal */
+.hero {
+    position: relative;
+    max-width: 1100px;
+    height: 280px;
+    margin: 40px auto; /* centrado */
+    border-radius: 20px;
+    overflow: hidden; /* recorta el contenido */
+}
+
+/* Video dentro del hero */
+.hero video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* ajusta el video sin deformarlo */
+}
+
+/* Texto encima del video */
+.hero-text {
+    position: absolute;
+    bottom: 20px;
+    left: 30px;
+    color: white;
+}
+
+/* ================= PROGRAMAS ================= */
+/* Bloques de contenido (cards) */
+.program-block {
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    margin-bottom: 40px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.12); /* sombra suave */
+    border-left: 6px solid var(--azul2); /* línea decorativa */
+    transition: 0.3s;
+}
+
+/* Efecto al pasar el mouse */
+.program-block:hover {
+    transform: translateY(-5px); /* se eleva */
+}
+
+/* Imagen dentro del bloque */
+.program-img {
+    border-radius: 10px;
+}
+
+/* ================= REDES SOCIALES ================= */
+/* Barra flotante lateral */
+.social-bar {
+    position: fixed;
+    top: 40%;
+    left: 0;
+    transform: translateY(-50%);
+    z-index: 1000;
+}
+
+/* Botones de redes */
+.social-bar a {
+    display: block;
+    padding: 12px;
+    color: white;
+    font-size: 20px;
+    margin: 5px 0;
+    border-radius: 0 10px 10px 0;
+    transition: 0.3s;
+}
+
+/* Efecto hover (se desplaza a la derecha) */
+.social-bar a:hover {
+    padding-left: 20px;
+}
+
+/* Colores por red social */
+.facebook { background: #3b5998; }
+.whatsapp { background: #25d366; }
+.youtube { background: #ff0000; }
+
+/* ================= FOOTER ================= */
+/* Pie de página */
+footer {
+    background: linear-gradient(90deg, #0c9aec, #1976d2);
+    color: white;
+    margin-top: 50px;
+}
+
+/* Contenedor del footer */
+.footer-container {
+    padding: 40px 0;
+}
+
+/* Títulos del footer */
+.footer-title {
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+/* Links del footer */
+.footer-links a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    margin-bottom: 8px;
+}
+
+/* Hover en links */
+.footer-links a:hover {
+    color: var(--azul3);
+}
+
+/* Iconos sociales del footer */
+.footer-social i {
+    font-size: 22px;
+    margin-right: 10px;
+}
+
+/* Parte inferior del footer */
+.footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.3);
+    padding-top: 15px;
+    font-size: 14px;
+}
+
+/* ================= RESPONSIVE ================= */
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 768px) {
+    .hero { 
+        height: 200px; /* reduce altura del video */
+    }
+}

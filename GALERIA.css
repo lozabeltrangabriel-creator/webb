@@ -1,0 +1,170 @@
+/* ================= VARIABLES ================= */
+/* Colores principales reutilizables */
+:root {
+    --azul1: #215fe6;
+    --azul2: #1976d2;
+    --azul3: #42a5f5;
+}
+
+/* ================= BODY ================= */
+/* Estilo general de la página */
+body {
+    font-family: "Times New Roman", Times, serif;
+    background-color: #f4f6f9; /* fondo claro */
+}
+
+/* ================= NAVBAR ================= */
+/* Barra de navegación superior fija */
+.navbar {
+    background: linear-gradient(90deg, #215fe6, #1976d2); /* degradado azul */
+    position: sticky; /* se queda fija arriba */
+    top: 0;
+    z-index: 1000; /* prioridad sobre otros elementos */
+    backdrop-filter: blur(10px); /* efecto desenfoque */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2); /* sombra elegante */
+}
+
+/* Estilo de los enlaces del menú */
+.navbar .nav-link {
+    color: white !important;
+    font-weight: 600;
+    margin-left: 15px;
+    position: relative;
+}
+
+/* Línea animada debajo del enlace */
+.navbar .nav-link::after {
+    content: "";
+    position: absolute;
+    width: 0%; /* comienza invisible */
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background: var(--azul3);
+    transition: 0.3s;
+}
+
+/* Animación al pasar el mouse */
+.navbar .nav-link:hover::after {
+    width: 100%; /* aparece la línea */
+}
+
+/* ================= REDES SOCIALES ================= */
+/* Barra lateral fija con redes */
+.social-bar {
+    position: fixed;
+    top: 40%;
+    left: 0;
+    transform: translateY(-50%); /* centra verticalmente */
+    z-index: 1000;
+}
+
+/* Botones de redes sociales */
+.social-bar a {
+    display: block;
+    padding: 12px;
+    color: white;
+    font-size: 20px;
+    margin: 5px 0;
+    border-radius: 0 10px 10px 0; /* bordes redondeados */
+}
+
+/* Colores por plataforma */
+.facebook { background: #3b5998; }
+.whatsapp { background: #25d366; }
+.youtube { background: #ff0000; }
+
+/* ================= TARJETAS (CARDS) ================= */
+/* Tarjetas modernas tipo producto/servicio */
+.card-pro {
+    border: none;
+    border-radius: 18px; /* bordes suaves */
+    overflow: hidden;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.15); /* sombra inicial */
+    transition: 0.4s;
+    background: white;
+}
+
+/* Efecto hover (levanta la tarjeta) */
+.card-pro:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.25); /* sombra más fuerte */
+}
+
+/* Imagen dentro de la tarjeta */
+.card-pro img {
+    height: 220px;
+    object-fit: cover; /* evita deformaciones */
+}
+
+/* Cuerpo de la tarjeta */
+.card-body {
+    padding: 20px;
+}
+
+/* Título de la tarjeta */
+.card-title {
+    font-weight: bold;
+    color: var(--azul2);
+}
+
+/* ================= BOTÓN ================= */
+/* Botón personalizado */
+.btn-custom {
+    background: linear-gradient(90deg, var(--azul1), var(--azul2));
+    border: none;
+    border-radius: 25px;
+    padding: 6px 18px;
+    color: white;
+    transition: 0.3s;
+}
+
+/* Efecto hover del botón */
+.btn-custom:hover {
+    background: linear-gradient(90deg, var(--azul2), var(--azul3));
+}
+
+/* ================= FOOTER ================= */
+/* Pie de página */
+footer {
+    background: linear-gradient(90deg, #0c9aec, #1976d2);
+    color: white;
+    margin-top: 50px;
+}
+
+/* Contenedor del footer */
+.footer-container {
+    padding: 40px 0;
+}
+
+/* Títulos del footer */
+.footer-title {
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+/* Enlaces del footer */
+.footer-links a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    margin-bottom: 8px;
+}
+
+/* Hover en enlaces */
+.footer-links a:hover {
+    color: var(--azul3);
+}
+
+/* Iconos sociales del footer */
+.footer-social i {
+    font-size: 22px;
+    margin-right: 10px;
+}
+
+/* Parte inferior del footer */
+.footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.3);
+    padding-top: 15px;
+    font-size: 14px;
+}

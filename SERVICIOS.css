@@ -1,0 +1,160 @@
+/* VARIABLES DE COLORES */
+:root {
+    --azul1: #215fe6;
+    --azul2: #1976d2;
+    --azul3: #42a5f5;
+}
+
+/* BODY */
+body {
+    font-family: "Times New Roman", serif;
+    background-color: #f5f7fa;
+}
+
+/* ================= NAVBAR ================= */
+.navbar {
+    background: linear-gradient(90deg, #215fe6, #1976d2);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.navbar .nav-link {
+    color: white !important;
+    font-weight: 600;
+    margin-left: 15px;
+    position: relative;
+    transition: 0.3s;
+}
+
+.navbar .nav-link::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background: var(--azul3);
+    transition: 0.3s;
+}
+
+.navbar .nav-link:hover::after {
+    width: 100%;
+}
+
+.navbar .nav-link:hover {
+    color: #bbdefb !important;
+}
+
+/* ================= PRODUCTOS ================= */
+.product-card {
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: 0.3s;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.product-card:hover {
+    transform: translateY(-8px);
+}
+
+.product-card img {
+    height: 250px;
+    object-fit: cover;
+}
+
+.price {
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--azul2);
+}
+
+/* ================= BOTÓN ================= */
+.btn-custom {
+    background: var(--azul2);
+    color: white;
+    border-radius: 25px;
+}
+
+.btn-custom:hover {
+    background: var(--azul1);
+}
+
+/* ================= REDES SOCIALES ================= */
+.social-bar {
+    position: fixed;
+    top: 40%;
+    left: 0;
+    z-index: 2000; /* 🔥 SOLUCIÓN: siempre visible */
+    display: flex;
+    flex-direction: column;
+}
+
+.social-bar a {
+    display: block;
+    padding: 12px;
+    color: white;
+    margin: 5px 0;
+    border-radius: 0 10px 10px 0;
+    font-size: 20px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.social-bar a:hover {
+    transform: scale(1.1);
+}
+
+/* Colores */
+.facebook { background: #3b5998; }
+.whatsapp { background: #25d366; }
+.youtube { background: #ff0000; }
+
+/* 📱 SOLO AJUSTE DE TAMAÑO (NO POSICIÓN) */
+@media (max-width: 768px) {
+    .social-bar a {
+        padding: 10px;
+        font-size: 16px;
+    }
+}
+
+/* ================= FOOTER ================= */
+footer {
+    background: linear-gradient(90deg, #0c9aec, #1976d2);
+    color: white;
+    margin-top: 50px;
+}
+
+.footer-container {
+    padding: 40px 0;
+}
+
+.footer-title {
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.footer-links a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    margin-bottom: 8px;
+}
+
+.footer-links a:hover {
+    color: var(--azul3);
+}
+
+.footer-social i {
+    font-size: 22px;
+    margin-right: 10px;
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.3);
+    padding-top: 15px;
+    font-size: 14px;
+}

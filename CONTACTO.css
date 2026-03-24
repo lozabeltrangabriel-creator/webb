@@ -1,0 +1,233 @@
+/* ================= VARIABLES ================= */
+/* Colores principales reutilizables */
+:root {
+    --azul1: #215fe6;
+    --azul2: #1976d2;
+    --azul3: #42a5f5;
+}
+
+/* ================= BODY ================= */
+/* Estilo general del sitio */
+body {
+    margin: 0; /* elimina márgenes por defecto */
+    font-family: "Times New Roman", serif;
+}
+
+/* ================= NAVBAR ================= */
+/* Barra de navegación fija con efecto moderno */
+.navbar {
+    background: linear-gradient(90deg, #215fe6, #1976d2);
+    position: sticky; /* se queda arriba */
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+/* Links del navbar */
+.navbar .nav-link {
+    color: white !important;
+    font-weight: 600;
+    margin-left: 15px;
+    position: relative;
+}
+
+/* Línea animada debajo */
+.navbar .nav-link::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background: var(--azul3);
+    transition: 0.3s;
+}
+
+/* Hover animado */
+.navbar .nav-link:hover::after {
+    width: 100%;
+}
+
+/* ================= HERO CON ONDAS ================= */
+.hero-wave {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* SVG de olas */
+.hero-wave svg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+/* Animaciones */
+.wave1 { animation: mover1 8s linear infinite; opacity: 0.9; }
+.wave2 { animation: mover2 12s linear infinite; opacity: 0.6; }
+.wave3 { animation: mover3 18s linear infinite; opacity: 0.4; }
+
+/* Movimiento izquierda */
+@keyframes mover1 {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-200px); }
+}
+
+/* Movimiento derecha */
+@keyframes mover2 {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(200px); }
+}
+
+/* Movimiento lento */
+@keyframes mover3 {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-150px); }
+}
+
+/* ================= TEXTO HERO ================= */
+.hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.9);
+    text-align: center;
+    color: white;
+    z-index: 2;
+    animation: aparecer 2s ease forwards;
+}
+
+.hero-text h1 {
+    font-size: 3.5rem;
+    font-weight: bold;
+    letter-spacing: 3px;
+    text-shadow: 0 0 10px rgba(255,255,255,0.6),
+                 0 0 20px rgba(255,255,255,0.4);
+}
+
+.hero-text p {
+    font-size: 1.3rem;
+}
+
+/* Animación aparición */
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -60%) scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+/* ================= REDES ================= */
+.social-bar {
+    position: fixed;
+    top: 40%;
+    left: 0;
+    transform: translateY(-50%);
+    z-index: 1000;
+}
+
+.social-bar a {
+    display: block;
+    padding: 12px;
+    color: white;
+    font-size: 20px;
+    margin: 5px 0;
+    border-radius: 0 10px 10px 0;
+}
+
+/* Colores */
+.facebook { background: #3b5998; }
+.whatsapp { background: #25d366; }
+.youtube { background: #ff0000; }
+
+/* ================= CONTACTO ================= */
+.contacto {
+    background: #f4f7ff;
+}
+
+.contacto h2 {
+    font-weight: bold;
+    color: var(--azul1);
+}
+
+.form-contacto {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.form-control {
+    border-radius: 10px;
+    padding: 12px;
+}
+
+.btn-primary {
+    background: linear-gradient(45deg, #215fe6, #42a5f5);
+    border: none;
+    border-radius: 25px;
+    padding: 12px;
+    font-weight: bold;
+}
+
+.btn-primary:hover {
+    transform: scale(1.05);
+}
+
+/* ================= UBICACIÓN ================= */
+.ubicacion {
+    background: white;
+}
+
+.ubicacion h2 {
+    color: var(--azul1);
+    font-weight: bold;
+}
+
+.mapa iframe {
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+/* ================= FOOTER ================= */
+footer {
+    background: linear-gradient(90deg, #0c9aec, #1976d2);
+    color: white;
+    margin-top: 50px;
+}
+
+.footer-container {
+    padding: 40px 0;
+}
+
+.footer-title {
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.footer-links a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    margin-bottom: 8px;
+}
+
+.footer-links a:hover {
+    color: var(--azul3);
+}
+
+.footer-social i {
+    font-size: 22px;
+    margin-right: 10px;
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.3);
+    padding-top: 15px;
+    font-size: 14px;
+}

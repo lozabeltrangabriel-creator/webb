@@ -1,0 +1,149 @@
+/* ================= VARIABLES ================= */
+/* Colores principales reutilizables en toda la página */
+:root {
+    --azul1: #215fe6;
+    --azul2: #1976d2;
+    --azul3: #42a5f5;
+}
+
+/* ================= BODY ================= */
+/* Estilo general del sitio */
+body {
+    font-family: "Times New Roman", serif;
+    background-color: #f5f7fa; /* fondo gris claro */
+}
+
+/* ================= NAVBAR ================= */
+/* Barra de navegación superior */
+.navbar {
+    background: linear-gradient(90deg, #215fe6, #1976d2); /* degradado azul */
+    position: sticky; /* se mantiene fija al hacer scroll */
+    top: 0;
+    z-index: 1000; /* siempre encima */
+    backdrop-filter: blur(10px); /* efecto glass */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2); /* sombra elegante */
+}
+
+/* Links del menú */
+.navbar .nav-link {
+    color: white !important;
+    font-weight: 600;
+    margin-left: 15px;
+    position: relative;
+}
+
+/* Línea animada debajo del link */
+.navbar .nav-link::after {
+    content: "";
+    position: absolute;
+    width: 0%; /* inicia invisible */
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background: var(--azul3);
+    transition: 0.3s;
+}
+
+/* Animación al pasar el mouse */
+.navbar .nav-link:hover::after {
+    width: 100%; /* se expande la línea */
+}
+
+/* ================= HERO (VIDEO) ================= */
+/* Contenedor principal del video */
+.hero {
+    position: relative;
+    max-width: 1100px;
+    margin: 40px auto; /* centrado */
+    border-radius: 20px;
+    overflow: hidden; /* recorta el contenido */
+}
+
+/* Texto encima del video */
+.hero-text {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%); /* centra horizontalmente */
+    color: white;
+    text-align: center;
+}
+
+/* ================= CAJAS / SECCIONES ================= */
+/* Contenedores tipo tarjeta */
+.section-box {
+    background: white;
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.12); /* sombra suave */
+}
+
+/* ================= REDES SOCIALES ================= */
+/* Barra flotante lateral */
+.social-bar {
+    position: fixed;
+    top: 40%;
+    left: 0;
+    transform: translateY(-50%); /* centrado vertical */
+    z-index: 1000;
+}
+
+/* Botones de redes */
+.social-bar a {
+    display: block;
+    padding: 12px;
+    color: white;
+    font-size: 20px;
+    margin: 5px 0;
+    border-radius: 0 10px 10px 0;
+}
+
+/* Colores de cada red */
+.facebook { background: #3b5998; }
+.whatsapp { background: #25d366; }
+.youtube { background: #ff0000; }
+
+/* ================= FOOTER ================= */
+/* Pie de página */
+footer {
+    background: linear-gradient(90deg, #0c9aec, #1976d2);
+    color: white;
+    margin-top: 50px;
+}
+
+/* Contenedor interno del footer */
+.footer-container {
+    padding: 40px 0;
+}
+
+/* Títulos del footer */
+.footer-title {
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+/* Enlaces del footer */
+.footer-links a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    margin-bottom: 8px;
+}
+
+/* Hover en enlaces */
+.footer-links a:hover {
+    color: var(--azul3);
+}
+
+/* Iconos de redes en el footer */
+.footer-social i {
+    font-size: 22px;
+    margin-right: 10px;
+}
+
+/* Parte inferior del footer */
+.footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.3);
+    padding-top: 15px;
+    font-size: 14px;
+}
